@@ -1,0 +1,27 @@
+name: Deploy Continuo AWS (Branch core)
+
+on:
+  push:
+    branches:
+      - core
+      - main
+
+jobs:
+  deploy:
+    name: Implantação Automática na AWS EC2
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Conectar via SSH na AWS e Atualizar Docker
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.AWS_EC2_HOST }}
+          username: ${{ secrets.AWS_EC2_USER }}
+          key: ${{ secrets.AWS_EC2_SSH_KEY }}
+          script: |
+            cd ~/solar-das-palmeiras-
+            git fetch --all
+            git checkout core || git checkout main
+            git pull
+            docker compose up --build -d
+            echo "✅ Aplicação Solar das Palmeiras atualizada com sucesso na AWS!"
