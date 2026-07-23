@@ -1,0 +1,198 @@
+{
+  "users": [
+    {
+      "id": 1,
+      "name": "Tiago (Admin)",
+      "email": "tiago@launchlab.com",
+      "role": "admin",
+      "canEdit": true
+    },
+    {
+      "id": 2,
+      "name": "Mariana (Atendimento)",
+      "email": "mariana@launchlab.com",
+      "role": "user",
+      "canEdit": true
+    },
+    {
+      "id": 3,
+      "name": "Carlos (Vendas)",
+      "email": "carlos@launchlab.com",
+      "role": "user",
+      "canEdit": false
+    }
+  ],
+  "properties": [
+    {
+      "id": 1,
+      "name": "Recanto das Serras (Casa Principal)",
+      "color": "#c25e38",
+      "address": "Av. das Palmeiras, 1000 - Suíte 101",
+      "checkInTime": "14:00",
+      "checkOutTime": "11:00",
+      "itemsToBring": [
+        "Documento de identidade com foto (RG ou CNH)",
+        "Roupas de cama e banho (caso opte pelo kit padrão)",
+        "Medicamentos e itens de uso pessoal / higiene",
+        "Comprovante de confirmação da reserva"
+      ],
+      "rules": "Proibido festas ou som alto após as 22h. Não é permitido fumar nas dependências internas.",
+      "contractTerms": "TERMO DE LOCAÇÃO DE TEMPORADA:\nAo realizar a reserva, o hóspede declara estar ciente e de acordo com as regras de convivência, horários de check-in (14h) e check-out (11h) e se compromete a zelar pela conservação do imóvel e seus bens.",
+      "authorizedUsers": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 1784833662452,
+      "name": "Chalé da Montanha",
+      "color": "#0926b3",
+      "address": "Estrada do Vale, 450 - Chalé 02",
+      "checkInTime": "15:00",
+      "checkOutTime": "12:00",
+      "itemsToBring": [
+        "Documentos com foto",
+        "Casacos e roupas de frio",
+        "Itens de higiene pessoal"
+      ],
+      "rules": "Uso da lareira com supervisão. Respeitar o silêncio da vila de chalés.",
+      "contractTerms": "TERMO DE LOCAÇÃO CHALÉ DA MONTANHA:\nO locatário compromete-se a respeitar o regulamento do condomínio.",
+      "authorizedUsers": [
+        1,
+        2,
+        3
+      ]
+    },
+    {
+      "id": 1784833662459,
+      "name": "Pousada Villa Verde",
+      "color": "#4d7c0f",
+      "address": "Rua dos Pinhais, 88 - Suíte Master",
+      "checkInTime": "14:00",
+      "checkOutTime": "11:00",
+      "itemsToBring": [
+        "Documento com foto",
+        "Roupas leves e repelente",
+        "Toalhas extras para área externa"
+      ],
+      "rules": "Animais de estimação permitidos mediante prévio aviso. Horário da piscina até as 20h.",
+      "contractTerms": "TERMO DE LOCAÇÃO VILLA VERDE:\nLocação de temporada sujeita às normas ambientais.",
+      "authorizedUsers": [
+        1,
+        2,
+        3
+      ]
+    }
+  ],
+  "reservations": [
+    {
+      "id": 101,
+      "propertyId": 1,
+      "guestName": "Ana Silva",
+      "phone": "(11) 98765-4321",
+      "email": "ana.silva@email.com",
+      "cpf": "123.456.789-00",
+      "checkIn": "2026-07-24",
+      "checkOut": "2026-07-27",
+      "totalAmount": 1200,
+      "depositAmount": 400,
+      "balanceDue": 800,
+      "cleaningFee": 150,
+      "extraFees": 0,
+      "paymentStatus": "parcial",
+      "salesRepId": 1,
+      "notes": "Solicitou berço extra"
+    },
+    {
+      "id": 102,
+      "propertyId": 1,
+      "guestName": "Roberto Oliveira",
+      "phone": "(21) 99887-6655",
+      "email": "roberto.oliveira@email.com",
+      "cpf": "987.654.321-11",
+      "checkIn": "2026-07-29",
+      "checkOut": "2026-08-01",
+      "totalAmount": 1600,
+      "depositAmount": 1600,
+      "balanceDue": 0,
+      "cleaningFee": 150,
+      "extraFees": 50,
+      "paymentStatus": "pago",
+      "salesRepId": 2,
+      "notes": "Pagamento total realizado via Pix"
+    },
+    {
+      "id": 1784832453770,
+      "propertyId": 1,
+      "guestName": "Carlos Eduardo",
+      "phone": "(11) 97777-1111",
+      "email": "",
+      "cpf": "",
+      "checkIn": "2026-08-10",
+      "checkOut": "2026-08-15",
+      "totalAmount": 2000,
+      "depositAmount": 0,
+      "balanceDue": 2000,
+      "cleaningFee": 0,
+      "extraFees": 0,
+      "paymentStatus": "pendente",
+      "salesRepId": 1,
+      "notes": ""
+    },
+    {
+      "id": 1784832558242,
+      "propertyId": 1,
+      "guestName": "tiago mattos ",
+      "phone": "(61)999893977",
+      "email": "blabla@gmail.com",
+      "cpf": "",
+      "checkIn": "2026-06-17",
+      "checkOut": "2026-06-30",
+      "totalAmount": 1000,
+      "depositAmount": 750,
+      "balanceDue": 250,
+      "cleaningFee": 150,
+      "extraFees": 0,
+      "paymentStatus": "parcial",
+      "salesRepId": 1,
+      "notes": ""
+    },
+    {
+      "id": 1784832696482,
+      "propertyId": 1,
+      "guestName": "Ana Silva",
+      "phone": "(61)999893977",
+      "email": "",
+      "cpf": "",
+      "checkIn": "2026-05-14",
+      "checkOut": "2026-05-28",
+      "totalAmount": 1000,
+      "depositAmount": 750,
+      "balanceDue": 250,
+      "cleaningFee": 150,
+      "extraFees": 0,
+      "paymentStatus": "parcial",
+      "salesRepId": 1,
+      "notes": ""
+    },
+    {
+      "id": 1784833965517,
+      "propertyId": 1784833662459,
+      "guestName": "tiago mattos ",
+      "phone": "(61)999893977",
+      "email": "blabla@gmail.com",
+      "cpf": "123.456.789-00",
+      "checkIn": "2026-07-26",
+      "checkOut": "2026-07-30",
+      "totalAmount": 1000,
+      "depositAmount": 500,
+      "balanceDue": 500,
+      "cleaningFee": 150,
+      "extraFees": 0,
+      "paymentStatus": "parcial",
+      "salesRepId": 1,
+      "notes": ""
+    }
+  ]
+}
