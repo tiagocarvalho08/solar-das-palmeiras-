@@ -6,6 +6,9 @@ set -e
 
 echo "🚀 Iniciando automação do ambiente Solar das Palmeiras na AWS..."
 
+CURRENT_USER=$(whoami)
+echo "👤 Usuário ativo: $CURRENT_USER"
+
 # 1. Configurar safe.directory para o Git
 git config --global --add safe.directory "*" || true
 
@@ -15,21 +18,21 @@ sudo apt-get update -y
 sudo apt-get install -y ca-certificates curl gnupg git docker.io docker-compose-v2
 
 # 3. Configurar permissões do Docker para o usuário ativo
-CURRENT_USER=$(whoami)
 echo "🔑 2/4 Configurando permissões do usuário ($CURRENT_USER)..."
 sudo usermod -aG docker "$CURRENT_USER" || true
 sudo systemctl enable --now docker
 
-# 4. Clonar ou atualizar o repositório do GitHub
+# 4. Ajustar permissões da pasta de destino ou recriar
 echo "📂 3/4 Baixando o código do Solar das Palmeiras..."
 TARGET_DIR="$HOME/solar-das-palmeiras-"
 
 if [ -d "$TARGET_DIR" ]; then
+    sudo chown -R "$CURRENT_USER:$CURRENT_USER" "$TARGET_DIR" || true
     cd "$TARGET_DIR"
     git config --global --add safe.directory "$TARGET_DIR" || true
-    git fetch --all
+    git fetch --all || (cd .. && sudo rm -rf "$TARGET_DIR" && git clone https://github.com/tiagocarvalho08/solar-das-palmeiras-.git && cd "$TARGET_DIR")
     git checkout core || git checkout main
-    git pull
+    git pull || true
 else
     cd "$HOME"
     git clone https://github.com/tiagocarvalho08/solar-das-palmeiras-.git
