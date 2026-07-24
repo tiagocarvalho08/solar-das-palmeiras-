@@ -1,0 +1,4 @@
+# Caddy Server - Automatic Let's Encrypt SSL Certificate Setup
+13-58-118-242.sslip.io, 18-225-182-59.sslip.io {
+    reverse_proxy frontend:5173
+}
